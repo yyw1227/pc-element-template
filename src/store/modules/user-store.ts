@@ -1,14 +1,14 @@
+import type { ActionContext } from 'vuex'
 import { getUserInfoRemote } from '@/api/remote/user'
-import { ActionContext } from 'vuex'
 
 const state = {
   userInfo_: {},
-  token_: undefined,
+  token_: undefined
 }
 
 const getters = {
   userInfo: (state_: any) => state_.userInfo_,
-  token: (state_: any) => state_.token_,
+  token: (state_: any) => state_.token_
 }
 
 const mutations = {

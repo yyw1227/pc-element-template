@@ -5,7 +5,24 @@
 
 + vue、 vue-router 、vuex 、element-plus相关API自动引入，无需import；
 + element-plus 组件自动引入；
++ 将eslint以及prettier部分移入internal文件夹, 所需依赖不再主项目中依赖, 主项目只配置eslint指向其位置
 
+vscode请在配置文件settings里
+删除
+```json
+{
+  "editor.defaultFormatter": "xxxxx"
+}
+```
+并新增(或覆盖)此二条
+```json lines
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
 
 ## 使用
 

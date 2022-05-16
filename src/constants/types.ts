@@ -1,4 +1,4 @@
 export interface ResponseData {
-    result: boolean,
-    data: any
+  result: boolean
+  data: any
 }

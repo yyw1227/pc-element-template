@@ -38,28 +38,13 @@ const routes = [
  */
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 })
-
-// 路由白名单
-const whiteList = ['/login', '/test']
 
 /**
  * 路由守卫
  */
-router.beforeEach((to, form) => {
-  const token = store.getters['UserStore/token']
-  // if (!whiteList.includes(to.path) && !token) {
-  //   router.push('/login')
-  // }
-})
-
-/**
- * 路由错误回调
- */
-router.onError((handler) => {
-  console.log('error:', handler)
-})
+// router.beforeEach(() => {});
 
 /**
  * 输出对象

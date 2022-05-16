@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1>{{ helloworld }}</h1>
+    <h1>{{ helloWorld }}</h1>
   </div>
 </template>
 
 <script setup lang="ts">
-const helloworld = ref('helloworld')
+const helloWorld = ref('helloWorld')
 </script>
 
 <style lang="scss" scoped>
-h1{
+h1 {
   color: $main-color;
   text-align: center;
 }
