@@ -29,6 +29,10 @@
     "vue-tsc": "^0.34.7",
     "unplugin-vue-define-options": "^0.6.1",
     "@common/eslint-config": "workspace:*",
-    "eslint": "^8.13.0"
+    "eslint": "^8.13.0",
+    "mockjs": "^1.1.0",
+    "vite-plugin-mock": "^2.9.6",
+    "vite-plugin-optimize-persist": "^0.1.2",
+    "vite-plugin-package-config": "^0.1.1"
   }
 }

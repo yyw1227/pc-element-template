@@ -52,3 +52,11 @@ pnpm build
 ```
 
 然后你会看到用于发布的 `build` 文件夹被生成。
+
+
+#组件命名
+使用defineOptions插件
+```js
+defineOptions({
+    name: 'xxxx'
+})
