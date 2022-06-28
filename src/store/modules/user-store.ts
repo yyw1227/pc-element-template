@@ -1,38 +1,34 @@
-import type { ActionContext } from 'vuex'
+// stores/counter.js
+import { defineStore } from 'pinia'
 import { getUserInfoRemote } from '@/api/remote/user'
-
-const state = {
-  userInfo_: {},
-  token_: undefined
+type State = {
+  userInfo: any
+  token?: string
 }
-
-const getters = {
-  userInfo: (state_: any) => state_.userInfo_,
-  token: (state_: any) => state_.token_
-}
-
-const mutations = {
-  SET_TOKEN(state_: any, str: string) {
-    state_.token_ = str
+export const userStore = defineStore('user', {
+  state: (): State => {
+    return {
+      userInfo: {},
+      token: undefined
+    }
   },
-  SET_USERINFO(state_: any, obj: any) {
-    state_.userInfo_ = Object.assign({}, state_.userInfo_, obj)
+  getters: {
+    userInfo: (state_: State) => state_.userInfo,
+    token: (state_: State) => state_.token
+  },
+  actions: {
+    async getUserInfo() {
+      // 临时先写死token
+      this.SET_TOKEN('96a4db05-c08a-4cce-bcc7-8a5276ef5842')
+      const res = await getUserInfoRemote()
+      this.SET_USERINFO(res.user)
+      return res
+    },
+    SET_TOKEN(str: string) {
+      this.token = str
+    },
+    SET_USERINFO(obj: any) {
+      this.userInfo = Object.assign({}, this.userInfo, obj)
+    }
   }
-}
-
-const actions = {
-  async getUserInfo({ commit }: ActionContext<any, any>) {
-    // 临时先写死token
-    commit('SET_TOKEN', '96a4db05-c08a-4cce-bcc7-8a5276ef5842')
-    const res = await getUserInfoRemote()
-    commit('SET_USERINFO', res.user)
-    return res
-  }
-}
-export default {
-  namespaced: true,
-  state,
-  getters,
-  mutations,
-  actions
-}
+})
