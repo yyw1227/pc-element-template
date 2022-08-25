@@ -1,25 +1,20 @@
 {
   "globals": {
+    "EffectScope": true,
     "computed": true,
     "createApp": true,
-    "createLogger": true,
-    "createNamespacedHelpers": true,
-    "createStore": true,
     "customRef": true,
     "defineAsyncComponent": true,
     "defineComponent": true,
     "effectScope": true,
-    "EffectScope": true,
     "getCurrentInstance": true,
     "getCurrentScope": true,
     "h": true,
     "inject": true,
+    "isProxy": true,
+    "isReactive": true,
     "isReadonly": true,
     "isRef": true,
-    "mapActions": true,
-    "mapGetters": true,
-    "mapMutations": true,
-    "mapState": true,
     "markRaw": true,
     "nextTick": true,
     "onActivated": true,
@@ -54,10 +49,9 @@
     "useRoute": true,
     "useRouter": true,
     "useSlots": true,
-    "useStore": true,
     "watch": true,
     "watchEffect": true,
-    "ElMessageBox": true,
-    "ElMessage": true
+    "watchPostEffect": true,
+    "watchSyncEffect": true
   }
 }

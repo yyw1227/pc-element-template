@@ -1,30 +1,26 @@
-# Vue 3 + TypeScript + Vite + element-plus
+# yuxin-big-screen（余新项目大屏）
 
 
 ## 简介
 
-+ vue、 vue-router 、vuex 、element-plus相关API自动引入，无需import；
-+ element-plus 组件自动引入；
-+ 将eslint以及prettier部分移入internal文件夹, 所需依赖不再主项目中依赖, 主项目只配置eslint指向其位置
++ 使用Vue3 + Pinia + TypeScript + Vite3 + element-plus；
 
-vscode请在配置文件settings里
-删除
-```json
-{
-  "editor.defaultFormatter": "xxxxx"
-}
-```
-并新增(或覆盖)此二条
-```json lines
-{
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
-}
-```
++ vue、 vue-router 、element-plus相关API自动引入，组件自动引入；
+
++ 类型声明文件请放在 `src/types`目录下；
+
++ 环境变量类型声明在 `env.d.ts` 声明文件中对 `ImportMetaEnv` 类型进行完善；
+
+
+
+## Node支持
+
+Vite3不再支持 Node 12 / 13 / 15，因为上述版本已经进入了 EOL 阶段。现在你必须使用 Node 14.18+ / 16+ 版本。
+
+
 
 ## 使用
+
 
 ### 安装依赖
 
@@ -51,12 +47,4 @@ pnpm dev
 pnpm build
 ```
 
-然后你会看到用于发布的 `build` 文件夹被生成。
-
-
-#组件命名
-使用defineOptions插件
-```js
-defineOptions({
-    name: 'xxxx'
-})
+然后你会看到用于发布的 `dist` 文件夹被生成。

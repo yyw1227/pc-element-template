@@ -1,9 +1,14 @@
 <template>
-  <div>not found</div>
+  <div>
+    <h1>404</h1>
+  </div>
 </template>
 
-<script lang="ts" setup>
-defineOptions({
-  name: '404'
-})
+<script setup lang="ts">
 </script>
+
+<style lang="scss" scoped>
+h1{
+  text-align: center;
+}
+</style>
