@@ -12,6 +12,6 @@ declare module '@vue/runtime-core' {
     ElRow: typeof import('element-plus/es')['ElRow']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ScreenAdapter: typeof import('./src/components/screen-adapter/screen-adapter.vue')['default']
+    ScreenAdapterScreenAdapter: typeof import('./../components/screen-adapter/screen-adapter.vue')['default']
   }
 }

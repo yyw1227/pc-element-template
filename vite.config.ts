@@ -6,6 +6,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { viteMockServe } from 'vite-plugin-mock'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 const baseURL = '10.100.2.19:8080' // 测试环境
 const https = false
@@ -41,11 +42,14 @@ export default defineConfig({
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
       resolvers: [ElementPlusResolver()],
-      // dts: './auto-imports.d.ts',
+      dts: './src/types/auto-imports.d.ts', // 指定类型声明文件，为true时在项目根目录创建
     }),
     Components({
-      resolvers: [ElementPlusResolver()]
-    })
+      resolvers: [ElementPlusResolver()],
+      directoryAsNamespace: true, // 组件名称包含目录，防止同名组件冲突
+      dts: './src/types/components.d.ts', // 指定类型声明文件，为true时在项目根目录创建
+    }),
+    visualizer()
   ],
   resolve: {
     alias: {
