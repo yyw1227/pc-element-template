@@ -7,14 +7,14 @@ export const useUserStore = defineStore({
     counter: 0
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2
+    doubleCount: state => state.counter * 2
   },
   actions: {
     async logOut() {
       this.token = ''
       console.log('logOut')
     },
-    setToken(token:string) {
+    setToken(token: string) {
       this.token = ''
     },
     async refreshTokenAction() {

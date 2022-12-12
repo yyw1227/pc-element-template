@@ -4,11 +4,10 @@
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-h1{
+h1 {
   text-align: center;
 }
 </style>

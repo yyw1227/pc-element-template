@@ -21,8 +21,8 @@ export default defineConfig({
       '/api': {
         target: prefix + baseURL,
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      },
+        rewrite: path => path.replace(/^\/api/, '')
+      }
     }
   },
   plugins: [
@@ -45,15 +45,15 @@ export default defineConfig({
       eslintrc: {
         enabled: false, // Default `false`需要注意的是，一旦生成配置文件之后，最好把改成false。否则这个文件每次会在重新加载的时候重新生成，这会导致eslint有时会找不到这个文件。
         filepath: './.eslintrc-auto-import.json',
-        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+        globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
       resolvers: [ElementPlusResolver()],
-      dts: './src/types/auto-imports.d.ts', // 指定类型声明文件，为true时在项目根目录创建
+      dts: './src/types/auto-imports.d.ts' // 指定类型声明文件，为true时在项目根目录创建
     }),
     Components({
       resolvers: [ElementPlusResolver()],
       directoryAsNamespace: true, // 组件名称包含目录，防止同名组件冲突
-      dts: './src/types/components.d.ts', // 指定类型声明文件，为true时在项目根目录创建
+      dts: './src/types/components.d.ts' // 指定类型声明文件，为true时在项目根目录创建
     }),
     visualizer()
   ],
