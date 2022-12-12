@@ -10,6 +10,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 const baseURL = '10.100.2.19:8080' // 测试环境
 const https = false
+const prodMock = true // 是否开启生产环境mock
 
 const prefix = https ? 'https://' : 'http://'
 
@@ -28,7 +29,12 @@ export default defineConfig({
     vue(),
     viteMockServe({
       // 解析根目录下的mock文件夹
-      mockPath: './src/mock'
+      mockPath: './src/mock',
+      prodEnabled: prodMock,
+      injectCode: `
+          import { setupProdMockServer } from './utils/mockProdServer';
+          setupProdMockServer();
+        `
     }),
     eslintPlugin({
       include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.ts'],
