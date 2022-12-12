@@ -1,13 +1,14 @@
 <template>
   <div class="screen-adapter">
-    <div class="screen-content-wrap" :style="style">
+    <div
+      class="screen-content-wrap"
+      :style="style">
       <slot />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
 interface Props {
   w?: number
   h?: number
@@ -27,12 +28,12 @@ const style = reactive({
 })
 
 const onResize = () => {
-  let timer:any = null
-  window.addEventListener('resize', function() {
+  let timer: any = null
+  window.addEventListener('resize', function () {
     if (timer) {
       clearTimeout(timer)
     }
-    timer = setTimeout(function() {
+    timer = setTimeout(function () {
       setScale()
     }, props.delay)
   })
@@ -68,7 +69,6 @@ onMounted(() => {
 onBeforeMount(() => {
   window.removeEventListener('resize', setScale)
 })
-
 </script>
 
 <style lang="scss" scoped>
