@@ -1,4 +1,4 @@
-interface LoginParams {
+type LoginParams = {
   username: string
   password: string
 }
